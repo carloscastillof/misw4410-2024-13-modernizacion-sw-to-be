@@ -137,6 +137,7 @@ const controller = class ProductsController {
                 if (result.length < 1) {
                     reject(new Error("All produtcs in stock!"));
                 } else {
+                    console.log(result);
                     resolve(result);
                 }
             });
