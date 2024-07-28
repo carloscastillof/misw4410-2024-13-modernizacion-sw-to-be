@@ -1,16 +1,18 @@
 import { DataSource } from "typeorm";
 import { User } from "../domain/entities/User";
+import { Product } from "../domain/entities/Product";
+import { Size } from "../domain/entities/Size";
 
 export const AppDataSource = new DataSource({
   type: "mysql",
   host: "localhost",
-  port: 3306,
-  username: "root",
+  port: 3308,
+  username: "user",
   password: "password",
-  database: "testdb",
+  database: "products",
   synchronize: true,
   logging: false,
-  entities: [User],
+  entities: [User, Product, Size],
   migrations: [],
   subscribers: [],
 });

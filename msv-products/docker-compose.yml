@@ -1,16 +1,16 @@
 version: '3.8'
 
 services:
-  mysql:
+  mysql-products:
     image: mysql:8.0
-    container_name: mysql_container
+    container_name: mysql_container_products
     environment:
       MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: testdb
+      MYSQL_DATABASE: products
       MYSQL_USER: user
-      MYSQL_PASSWORD: userpassword
+      MYSQL_PASSWORD: password
     ports:
-      - "3306:3306"
+      - "3308:3306"
     volumes:
       - mysql_data:/var/lib/mysql
 
