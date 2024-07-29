@@ -22,11 +22,6 @@ services:
       # Where our data will be persisted
     volumes:
       - my-db:/var/lib/mysql
-# Names our volume
-  sonarqube:
-    image: sonarqube:latest
-    ports:
-      - "9000:9000"
 
 volumes:
   my-db:
