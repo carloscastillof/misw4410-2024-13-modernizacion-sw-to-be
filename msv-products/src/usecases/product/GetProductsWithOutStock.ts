@@ -15,7 +15,7 @@ export class GetProductsWithOutStock {
       size: size.size,
       price: size.price,
       stock: size.stock,
-      id: size.id,
+      id: size.product.id,
       title: size.product.title,
       description: size.product.description
     }));
