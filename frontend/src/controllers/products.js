@@ -132,8 +132,14 @@ const controller = class ProductsController {
 
     outOfStock() {
         return new Promise((resolve,reject) => {
-            this.con.query('SELECT * FROM `sizes` RIGHT JOIN products ON sizes.product_id = products.id WHERE sizes.stock = 0', function (err, result) {
-                if (err) reject(err);
+            var request = require("request");
+            var options = {
+                "method": "GET",
+                "url": "http://localhost:8080/products/stock",
+            };
+            request(options, function (error, response) {
+                if (error) reject(new Error(error));
+                let result = JSON.parse(response.body);
                 if (result.length < 1) {
                     reject(new Error("All produtcs in stock!"));
                 } else {
